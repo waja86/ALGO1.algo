@@ -1,0 +1,39 @@
+VAR 
+ array_one:array of integer;
+ array_two:array of integer;
+    i:integer;
+    htab:hash_table<integer,integer> 
+    kyes:array of integer;
+    BEGIN
+
+    for i from 0 to length(array_one)-1 step 1 do
+    read(array_one[i])
+    END_for
+
+    for j from 0 to length(array_two)-1 step 1 do
+     read(array_one[j])
+    END_for
+
+    for i from 0 to length(array_one)-1 step 1 do
+    htab.insert(array_one[i],1)
+    END_for
+
+    for j from 0 to length(array_two)-1 step 1 do if (htab.lookup(array_two[j]=true)) 
+    then htab.insert(array_two[j],2)
+
+    else
+     htab.insert(array_two[j],1) 
+    end_if
+    END_for
+
+    kyes:=htab.getkyes 
+    values:=htab.getvalues 
+    
+    for i from 0 to length(kyes)-1 step 1 do
+
+    if (values[i]=1) then
+        sum:=sum+kyes[i]
+        end_if
+    end_for
+
+    write(sum)
