@@ -1,0 +1,45 @@
+PROCEDURE 
+pssclaire(v1 
+: arrayof 
+INTEGER[4],v2 
+: arrayof INTEGER[4],ps 
+,ps 
+: INTEGER)
+
+VAR
+    v1x:INTEGER;
+    v1y:INTEGER;
+    v2x:INTEGER;
+    v2y:INTEGER;
+
+    BEGIN
+       FOR i FROM 0 TO 4 STEP 1  DO
+         read(v1[i],v2[i])
+    END_FOR
+     v1x:=v1[1]-v2[0]
+     v1y:=v1[3]-v2[2];
+     v2x:=v2[1]-v2[0];
+     v2y:=v2[3]-v2[2];
+
+     ps:=v1x*v2x+v1y*v2y
+
+END
+ALGORITHM algorithm_ps
+VAR
+ 
+    o1: array_of INTEGER[4];
+    o2: array_of INTEGER[4];
+    ps: INTEGER;
+    i: INTEGER;
+
+    BEGIN
+      FOR i FROM 0 TO 3 STEP 1  DO
+        read(o1[i],o2[i])
+         END_FOR
+          pssclaire(o1,o2,ps)
+          IF (ps=0) THEN
+           write("les 2 vecteurs ne sont pas orthogonaux")
+         END_IF
+       END  
+
+     
