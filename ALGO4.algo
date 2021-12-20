@@ -1,0 +1,15 @@
+VAR
+    sorted_array : array of integer;
+    i:integer;
+    j:integer;
+    x:integer;
+BEGIN
+    read(sorted_array[0])
+    for i from 1 to length(sorted_array) step 1 do
+        read(sorted_array[i])
+        x=sorted_array[i]
+        for j from i-1 to 0 step -1 do
+        swap(x,sorted_array[j])
+        end_for
+    end_for
+END
